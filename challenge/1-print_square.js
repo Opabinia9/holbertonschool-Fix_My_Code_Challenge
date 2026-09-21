@@ -5,7 +5,6 @@
     The size of the square must be the first argument 
     of the program.
 */
-import process from 'node:process';
 
 if (process.argv.length <= 2) {
   process.stderr.write('Missing argument\n');
