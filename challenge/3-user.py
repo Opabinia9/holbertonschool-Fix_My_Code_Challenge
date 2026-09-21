@@ -22,12 +22,12 @@ class User:
         self.id = str(uuid.uuid4())
 
     @property
-    def password(self) -> str | int | None:
+    def password(self):
         """Password getter."""
         return self.__password
 
     @password.setter
-    def password(self, pwd: str | int | None) -> None:
+    def password(self, pwd) -> None:
         """Password setter:.
 
         - `None` if `pwd` is `None`
@@ -39,7 +39,7 @@ class User:
         else:
             self.__password = hashlib.md5(pwd.encode()).hexdigest().lower()
 
-    def is_valid_password(self, pwd: str | int | None) -> bool:
+    def is_valid_password(self, pwd) -> bool:
         """Is Valid password:.
 
         - `False` if `pwd` is `None`
